@@ -8,7 +8,10 @@ import hello.core.member.MemberServiceImpl;
 public class MemberApp {
     
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        // 여기에는 MemberServiceImpl이 들어간다.
+        MemberService memberService = appConfig.memberService();
+
         //Long type이라 L붙혀준 거, 붙혀야 함!
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
