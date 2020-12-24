@@ -16,7 +16,7 @@ public class MemberApp {
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
-        
+
         //Long type이라 L붙혀준 거, 붙혀야 함!
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
