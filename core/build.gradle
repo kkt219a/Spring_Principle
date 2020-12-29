@@ -28,6 +28,7 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	//lombok 라이브러리 추가 끝
+	implementation 'javax.inject:javax.inject:1' // jsr-330 Provider
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
