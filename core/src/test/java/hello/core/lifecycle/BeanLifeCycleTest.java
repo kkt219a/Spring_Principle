@@ -10,8 +10,11 @@ public class BeanLifeCycleTest {
 
     @Test
     public void lifeCycleTest(){
+        System.out.println("BeanLifeCycleTest.lifeCycleTest");
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
+        System.out.println("BeanLifeCycleTest.lifeCycleTest2");
         NetworkClient client = ac.getBean(NetworkClient.class);
+        System.out.println("BeanLifeCycleTest.lifeCycleTest3");
         ac.close(); // 스프링 컨테이너 종료, ConfigurableApplicationContext 필요
     }
 
@@ -21,7 +24,9 @@ public class BeanLifeCycleTest {
         @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
+            System.out.println("LifeCycleConfig.networkClient");
             networkClient.setUrl("http://hello-spring.dev");
+            System.out.println("LifeCycleConfig.networkClient2");
             return networkClient;
         }
     }
